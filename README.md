@@ -117,8 +117,8 @@ curl -i -X POST -H "Content-Type: application/json" \
 > Note: Replace {id} with the actual user ID from the database.
 ```bash
 curl -i -X PUT -H "Content-Type: application/json" \
-    -d '{"email":"vini@gmail.com", "firstName": "Vini", "lastName": "COUCOU", "city": "PARIS"}' \ 
-    http://localhost:8080/users/{id}
+    --data '{"email":"vini@gmail.com", "firstName": "Vini", "lastName": "COUCOU", "city": "PARIS"}' \
+    "http://localhost:8080/users/{id}
 ```
 
 ### 5. List All Users
@@ -134,13 +134,13 @@ curl -i http://localhost:8080/users/user-ids
 ### 7. Get User by ID
 > Note: Replace {id} with the actual user ID from the database.
 ```bash
-curl -i http://localhost:8080/users/{id}
+curl -i "http://localhost:8080/users/{id}"
 ```
 
 ### 8. Delete a User
 > Note: Replace {id} with the actual user ID from the database.
 ```bash
-curl -i -X DELETE http://localhost:8080/users/{id}
+curl -i -X DELETE "http://localhost:8080/users/{id}"
 ```
 
 ---
